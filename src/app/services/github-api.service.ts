@@ -5,7 +5,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 @Injectable()
 export class GithubApiService{
 
-    url: string = "https://api.github.com/search/repositories?per_page=10&amp;q=";
+    url: string = "https://api.github.com/search/repositories?per_page=100&amp;q=";
     constructor(private _httpclient: HttpClient) {}
     getResults(query: string): Observable<any>{
         return this._httpclient.get(this.url + query);

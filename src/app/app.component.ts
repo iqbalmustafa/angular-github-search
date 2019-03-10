@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   title = 'angular-github-search';
   searchText = '';
+  p: number = 1;
   constructor(private _githubApiService: GithubApiService){}
 
   listResults: Github[];

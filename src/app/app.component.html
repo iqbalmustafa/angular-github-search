@@ -11,10 +11,10 @@
     <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search" ngModel>
       <button type="submit" style="display:none">hidden submit</button>
     </form>
-    <div class="row">
 
     </div>
-<ul *ngFor="let result of listResults" class="list-group">
+<div class="container">
+<ul *ngFor="let result of listResults | paginate: { itemsPerPage: 10, currentPage: p }" class="list-group">
   <li class="list-group-item"> 
     <div>
         Fullname: {{result.full_name}}
@@ -33,5 +33,6 @@
     </div> 
   </li>
 </ul>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <router-outlet></router-outlet>
